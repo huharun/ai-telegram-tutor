@@ -1,0 +1,4 @@
+@"
+n8n-data/
+.env
+"@ | Out-File ".gitignore" -Encoding UTF8
