@@ -1,27 +1,27 @@
-# 🤖 AI English Tutor Telegram Bot
+﻿# ðŸ¤– AI English Tutor Telegram Bot
 
-A fully **local**, **private** AI English tutor that lives in your Telegram. It corrects your grammar, explains mistakes, and remembers your conversation history — all running on your own machine for free.
+A fully **local**, **private** AI English tutor that lives in your Telegram. It corrects your grammar, explains mistakes, and remembers your conversation history â€” all running on your own machine for free.
 
-> Built with: n8n · Ollama (gemma3:4b) · PostgreSQL · Docker · Ngrok · Telegram
+> Built with: n8n Â· Ollama (gemma3:4b) Â· PostgreSQL Â· Docker Â· Ngrok Â· Telegram
 
 ---
 
-## 📸 How It Works
+## ðŸ“¸ How It Works
 
-You send a message → Bot corrects your English → Asks a follow-up question → Remembers everything.
+You send a message â†’ Bot corrects your English â†’ Asks a follow-up question â†’ Remembers everything.
 
 ```
 You:  "i goed to store yesterday and buyed some apple"
 Bot:  Great effort! A couple of corrections:
-      ✏️ "goed" → "went" (irregular past tense)
-      ✏️ "buyed" → "bought" (irregular past tense)
-      ✏️ "some apple" → "some apples" (plural)
-      What did you buy at the store? 🛒
+      âœï¸ "goed" â†’ "went" (irregular past tense)
+      âœï¸ "buyed" â†’ "bought" (irregular past tense)
+      âœï¸ "some apple" â†’ "some apples" (plural)
+      What did you buy at the store? ðŸ›’
 ```
 
 ---
 
-## ✅ Prerequisites
+## âœ… Prerequisites
 
 Install all of these before starting:
 
@@ -34,9 +34,9 @@ Install all of these before starting:
 
 ---
 
-## 🚀 First Time Setup
+## ðŸš€ First Time Setup
 
-### Step 1 — Clone this repo
+### Step 1 â€” Clone this repo
 
 Open PowerShell and run:
 
@@ -47,7 +47,7 @@ cd ai-telegram-tutor
 
 ---
 
-### Step 2 — Pull the AI model
+### Step 2 â€” Pull the AI model
 
 ```powershell
 ollama pull gemma3:4b
@@ -57,7 +57,7 @@ This downloads ~3GB. Wait for it to finish.
 
 ---
 
-### Step 3 — Set up Ngrok
+### Step 3 â€” Set up Ngrok
 
 1. Create a free account at https://ngrok.com
 2. Go to https://dashboard.ngrok.com/authtokens
@@ -70,9 +70,9 @@ ngrok config add-authtoken YOUR_NGROK_TOKEN_HERE
 
 ---
 
-### Step 4 — Create your Telegram Bot
+### Step 4 â€” Create your Telegram Bot
 
-1. Open Telegram → search **@BotFather** (must have blue ✓ checkmark)
+1. Open Telegram â†’ search **@BotFather** (must have blue âœ“ checkmark)
 2. Send: `/newbot`
 3. Enter a name: `My English Tutor`
 4. Enter a username ending in `bot`: e.g. `MyEnglishTutor_bot`
@@ -80,11 +80,11 @@ ngrok config add-authtoken YOUR_NGROK_TOKEN_HERE
    ```
    1234567890:AAFabcdefGHIjklmnoPQRsTUvwxyz
    ```
-   **Save this token — you need it in the next step.**
+   **Save this token â€” you need it in the next step.**
 
 ---
 
-### Step 5 — Create your .env file
+### Step 5 â€” Create your .env file
 
 In your project folder, copy the example file:
 
@@ -93,7 +93,7 @@ copy .env.example .env
 notepad .env
 ```
 
-The file looks like this — just replace the token:
+The file looks like this â€” just replace the token:
 
 ```
 TELEGRAM_BOT_TOKEN=paste_your_token_here
@@ -105,7 +105,7 @@ Save and close Notepad.
 
 ---
 
-### Step 6 — Start everything
+### Step 6 â€” Start everything
 
 ```powershell
 .\start.bat
@@ -123,12 +123,12 @@ Wait ~20 seconds for everything to load.
 
 ---
 
-### Step 7 — Set up n8n (first time only)
+### Step 7 â€” Set up n8n (first time only)
 
 When the browser opens:
 
-1. Create a local account (any email/password — this is local only)
-2. Click **"+"** → top right **⋮ menu** → **"Import from file"**
+1. Create a local account (any email/password â€” this is local only)
+2. Click **"+"** â†’ top right **â‹® menu** â†’ **"Import from file"**
 3. Select `n8n-workflows/english-tutor.json`
 4. Set up 3 credentials by clicking each node:
 
@@ -154,11 +154,11 @@ When the browser opens:
 | Port | `5432` |
 | SSL | Off |
 
-5. Click **Save** → Click **Publish**
+5. Click **Save** â†’ Click **Publish**
 
 ---
 
-### Step 8 — Test it!
+### Step 8 â€” Test it!
 
 Go to Telegram, find your bot, send:
 
@@ -166,11 +166,11 @@ Go to Telegram, find your bot, send:
 i goed to store yesterday and buyed some apple
 ```
 
-Your bot should reply with corrections within 10–30 seconds. 🎉
+Your bot should reply with corrections within 10â€“30 seconds. ðŸŽ‰
 
 ---
 
-## ▶️ Daily Use (After First Setup)
+## â–¶ï¸ Daily Use (After First Setup)
 
 Just run:
 
@@ -180,34 +180,34 @@ Just run:
 
 That's it. Everything starts automatically. No terminals to manage.
 
-> ⚠️ Ngrok gives a new URL every time on the free plan. The script handles this automatically.
+> âš ï¸ Ngrok gives a new URL every time on the free plan. The script handles this automatically.
 
 ---
 
-## 📁 Project Structure
+## ðŸ“ Project Structure
 
 ```
 ai-telegram-tutor/
-├── start.bat                  ← Run this every time
-├── .env                       ← Your secrets (gitignored, not on GitHub)
-├── .env.example               ← Template showing what goes in .env
-├── n8n-workflows/
-│   └── english-tutor.json     ← Import this into n8n on first run
-├── n8n-data/                  ← Auto-created, stores n8n data (gitignored)
-└── README.md                  ← This file
+â”œâ”€â”€ start.bat                  â† Run this every time
+â”œâ”€â”€ .env                       â† Your secrets (gitignored, not on GitHub)
+â”œâ”€â”€ .env.example               â† Template showing what goes in .env
+â”œâ”€â”€ n8n-workflows/
+â”‚   â””â”€â”€ english-tutor.json     â† Import this into n8n on first run
+â”œâ”€â”€ n8n-data/                  â† Auto-created, stores n8n data (gitignored)
+â””â”€â”€ README.md                  â† This file
 ```
 
 ---
 
-## 🔒 Privacy & Security
+## ðŸ”’ Privacy & Security
 
-- `.env` is **gitignored** — your Telegram token never goes to GitHub
+- `.env` is **gitignored** â€” your Telegram token never goes to GitHub
 - Everything runs **100% locally** on your machine
 - No data sent to OpenAI or any cloud service
 
 ---
 
-## 🔧 Troubleshooting
+## ðŸ”§ Troubleshooting
 
 **Bot not responding?**
 - Make sure workflow is **Published** (green) in n8n
@@ -225,7 +225,7 @@ ai-telegram-tutor/
 
 ---
 
-## 🧩 Tech Stack
+## ðŸ§© Tech Stack
 
 | Layer | Tool | Purpose |
 |-------|------|---------|
@@ -238,6 +238,6 @@ ai-telegram-tutor/
 
 ---
 
-## 📝 License
+## ðŸ“ License
 
-MIT — free to use, modify, and share.
+MIT â€” free to use, modify, and share.
