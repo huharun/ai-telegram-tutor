@@ -1,4 +1,4 @@
-﻿# AI English Tutor Telegram Bot
+﻿# AI English Tutor Telegram Bot  
 
 A fully **local**, **private** AI English tutor that lives in your Telegram. It corrects your grammar, explains mistakes, and remembers your conversation history - all running on your own machine for free.
 
